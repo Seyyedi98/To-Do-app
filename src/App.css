@@ -19,7 +19,7 @@ body {
   height: 100vh;
   display: grid;
   justify-content: center;
-  background-image: url("./images/bg-desktop-light.jpg");
+  background-image: url("../public/images/bg-desktop-light.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-color: hsl(0, 0%, 95%);
@@ -209,6 +209,10 @@ body {
   display: none;
 }
 
+.cross-icon {
+  width: 12px;
+}
+
 /* ////////////// queries /////////////// */
 
 @media (width < 800px) {
@@ -217,7 +221,7 @@ body {
   }
 
   .page {
-    background-image: url("./images/bg-mobile-light.jpg");
+    background-image: url("../public/images/bg-mobile-light.jpg");
   }
 }
 

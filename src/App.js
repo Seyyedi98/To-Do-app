@@ -51,7 +51,7 @@ function TodoApp() {
 
 function CreateTask({ onNewTask }) {
   const [task, setTask] = useState();
-  const id = crypto.randomUUID();
+  const id = Math.floor(Math.random() * 10000000);
   const newTask = { id, task, isChecked: false };
 
   function handleSubmit(e) {
@@ -150,7 +150,11 @@ function Task({ task, onTaskToggle, onDeleteTask }) {
             value={task.isChecked}
             onClick={() => onTaskToggle(task.id)}
           >
-            {task.isChecked ? <span>&#10004;</span> : ""}
+            {task.isChecked ? (
+              <img src="./images/icon-check.svg" alt="checkmark"></img>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </form>
@@ -167,7 +171,11 @@ function Task({ task, onTaskToggle, onDeleteTask }) {
         className="button btn-remove"
         onClick={() => onDeleteTask(task.id)}
       >
-        &#x2613;
+        <img
+          className="cross-icon"
+          src="images/icon-cross.svg"
+          alt="cross icon"
+        ></img>
       </button>
     </div>
   );
